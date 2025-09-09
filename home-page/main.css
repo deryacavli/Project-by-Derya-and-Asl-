@@ -67,16 +67,16 @@
   position: relative;
   background: #1a1a1a;
   height: 800px;
-  display: flex;             
+  display: flex;
   justify-content: center;
   text-align: center;
   color: var(--title);
 }
 
 .container {
-  max-width: 1200px; 
+  max-width: 1200px;
   width: 100%;
-  padding: 0 2rem;  
+  padding: 0 2rem;
   margin-top: 5rem;
 }
 
@@ -87,10 +87,10 @@
   line-height: 1.5;
 }
 
-
 .categories {
   display: inline-flex;
   flex-wrap: wrap;
+  gap: 8px;
   background: var(--button-input-bg);
   padding: 0.6rem 1rem;
   border-radius: 8px;
@@ -99,7 +99,8 @@
 }
 
 .categories span {
-  color:#a1a1a1;
+  color: #a1a1a1;
+  margin-top: 4px;
 }
 
 .categories a {
@@ -108,7 +109,7 @@
   padding: 0.3rem 0.8rem;
   border-radius: 6px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.8s;
 }
 
 .categories a:hover {
@@ -171,7 +172,7 @@
   .hamburger {
     display: block;
   }
-  .btn-apply{
+  .btn-apply {
     display: none;
   }
 }
