@@ -111,7 +111,6 @@
   padding: 0.3rem 0.8rem;
   border-radius: 6px;
   text-decoration: none;
-  transition: background 0.3s;
   transition: background 0.8s;
 }
 
@@ -176,7 +175,6 @@
     display: block;
   }
   #apply-menu{
-  .btn-apply{
     display: none;
   }
 }
