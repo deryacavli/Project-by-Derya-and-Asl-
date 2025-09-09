@@ -153,7 +153,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* gizle */
+    display: none; 
     position: absolute;
     top: 60px;
     right: 20px;
@@ -165,13 +165,13 @@
   }
 
   .nav-links.active {
-    display: flex; /* tıklandığında göster */
+    display: flex; 
   }
 
   .hamburger {
     display: block;
   }
-  .btn-apply{
+  #apply-menu{
     display: none;
   }
 }
