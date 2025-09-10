@@ -8,7 +8,7 @@
 .card {
   height: 100%;
   border: 1.5px solid #262626;
-  padding: 7rem 5rem;
+  padding: 6.5rem 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -74,4 +74,13 @@
   cursor: pointer;
 }
 
+/* Responsive*/
+@media (max-width:970px) {
+  .cards{
+    grid-template-columns: 1fr;
+  }
+  .sub-container button {
+    display: none;
+  }
+}
 
