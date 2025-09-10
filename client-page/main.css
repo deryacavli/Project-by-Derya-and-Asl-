@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+}
+
+.card {
+  height: 100%;
+  border: 1.5px solid #262626;
+  padding: 7rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h3 {
+  color: var(--subheading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.card p {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.client {
+  margin-top: 2rem;
+}
+
+.sub-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #262626;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+}
+
+.sub-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25%;
+}
+
+.client-info {
+  flex: 1;
+}
+
+.client-info .name {
+  color: var(--title);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.client-info .status {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+}
+
+.sub-container button {
+  background-color: var(--button-input-bg);
+  border: 0.1px solid var(--button-input-bg);
+  color: var(--title);
+  font-family: Barlow;
+  font-size: 1rem;
+  padding: 1rem 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
