@@ -158,13 +158,14 @@
   .nav-links {
     display: none; 
     position: absolute;
-    top: 60px;
-    right: 20px;
+    top: 40px;
+    right: 40px; 
     flex-direction: column;
     background: #222;
     padding: 15px;
     border-radius: 8px;
     width: 200px;
+    z-index: 1;
   }
 
   .nav-links.active {

@@ -8,10 +8,10 @@
 .card {
   height: 100%;
   border: 1.5px solid #262626;
-  padding: 6.5rem 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-block: 70px;
 }
 
 .card h3 {
