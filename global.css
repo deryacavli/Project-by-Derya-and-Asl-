@@ -31,7 +31,7 @@ body {
   overflow: hidden;
   height: 190px;
   width: 100%;
-  background-image: url("Container.png");
+  background-image: url("assets/Container.png");
   background-position: center;
 }
 

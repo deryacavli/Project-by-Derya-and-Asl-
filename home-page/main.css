@@ -1,4 +1,7 @@
 /* ========== NAVBAR ========== */
+.home {
+  height: 100vh;
+}
 .navbar {
   width: 100%;
   height: 90px;
@@ -36,7 +39,6 @@
   transition: color 0.3s;
 }
 
-.nav-links a:hover,
 .nav-links a.active {
   color: var(--title);
 }
@@ -66,12 +68,11 @@
 .hero {
   position: relative;
   background: #1a1a1a;
-  height: 800px;
   display: flex;             
-  display: flex;
   justify-content: center;
   text-align: center;
   color: var(--title);
+  height: calc(100vh - 90px); /* navbar yüksekliği kadar düş */
 }
 
 .container {
@@ -146,8 +147,8 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 500px;
-  background: url("Abstract\ Design.png") no-repeat center bottom;
+  height: 600px;
+  background: url("../assets/Abstract\ Design.png") no-repeat center bottom;
   background-size: cover;
   opacity: 0.6;
   pointer-events: none;
