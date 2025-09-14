@@ -3,181 +3,196 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SquareUp</title>
+    <!--========================= REMIXICON =========================-->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="home-page/main.css" />
-    <link rel="stylesheet" href="client-page/main.css" />
-    <link rel="stylesheet" href="register-page/main.css" />
+    <!--========================= MAIN CSS =========================-->
+    <link rel="stylesheet" href="main.css" />
   </head>
+
   <body>
-    <!--Home Page-->
-    <div class="home">
-    <!-- Navbar -->
-    <header class="navbar">
-      <div class="logo">
-        <img src="assets/Logo.png" alt="SquareUp Logo" />
-        <span>SquareUp</span>
-      </div>
-      <!--Menu-->
-      <div class="hamburger" id="hamburger">
-        <i class="ri-menu-3-line"></i>
-      </div>
+    <!--========================= LANDING PAGE =========================-->
+    <section class="landing-page">
+      <!--==== NAVBAR ====-->
+      <nav>
+        <div class="nav-logo-area">
+          <img src="assets/Logo.png" alt="SquareUp Logo" />
+          <span>SquareUp</span>
+        </div>
+        <div class="nav-menu">
+          <a href="#">Home</a>
+          <a href="#clients">Clients</a>
+          <a href="#">FAQ</a>
+          <a href="#register">Register</a>
 
-      <nav class="nav-links" id="nav-links">
-        <a href="#" class="active">Home</a>
-        <a href="#">Clients</a>
-        <a href="#">FAQ</a>
-        <a href="#">Register</a>
+          <div class="nav-close">
+            <i class="ri-close-large-fill"></i>
+          </div>
+        </div>
+        <a href="#" class="btn-apply btn-apply-nav">Apply Us</a>
+        <div class="hamburger">
+          <i class="ri-menu-3-line"></i>
+        </div>
       </nav>
-      <a href="#" class="btn-apply" id="apply-menu">Apply Us</a>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <h1>A Digital Product Studio<br />that will Work</h1>
+      <!--==== LANDING PAGE CONTENT ====-->
+      <div class="landing-page-container">
+        <div class="landing-page-content">
+          <div class="landing-page-title">
+            A Digital Product Studio<br />that will Work
+          </div>
 
-        <div class="categories">
-          <span>For</span>
-          <a href="#">Startups</a>
-          <a href="#">Enterprise leaders</a>
-          <a href="#">Media & Publishers</a>
-          <span>and</span>
-          <a href="#">Social Good</a>
+          <div class="categories">
+            For
+            <a href="#">Startups</a>
+            <a href="#">Enterprise leaders</a>
+            <a href="#">Media & Publishers</a>
+            and
+            <a href="#">Social Good</a>
+          </div>
+
+          <div class="landing-page-buttons">
+            <a href="#" class="btn-dark">Our Works</a>
+            <a href="#" class="btn-apply" id="apply-fixed">Apply Us</a>
+          </div>
         </div>
 
-        <div class="hero-buttons">
-          <a href="#" class="btn-dark">Our Works</a>
-          <a href="#" class="btn-apply" id="apply-fixed">Apply Us</a>
-        </div>
+        <div class="landing-page-bg"></div>
       </div>
-
-      <div class="hero-bg"></div>
     </section>
-    </div>
 
-    <!--Client Page-->
-    <!--Title-->
-    <div class="title-area">
-      <div class="title">What our Clients say About us</div>
-      <div class="description">
-        At SquareUp, we take pride in delivering exceptional digital products
-        and services that drive success for our clients. Here's what some of our
-        satisfied clients have to say about their experience working with us
+    <!--========================= CLIENTS SECTION =========================-->
+    <section id="clients" class="clients">
+      <!--==== TITLE AREA ====-->
+      <div class="title-area">
+        <div class="title">What our Clients say About us</div>
+        <div class="title-area-description">
+          At SquareUp, we take pride in delivering exceptional digital products
+          and services that drive success for our clients. Here's what some of
+          our satisfied clients have to say about their experience working with
+          us
+        </div>
       </div>
-    </div>
-    <!--Client Cards-->
-    <div class="cards">
-      <article class="card section">
-        <div class="text-container">
-          <h3>
-            SquareUp has been Instrumental in Transforming our Online Presence
-          </h3>
-          <p>
-            Their team's expertise in web development and design resulted in a
-            visually stunning and user-friendly e-commerce platform. Our online
-            sales have skyrocketed, and we couldn't be happier.
-          </p>
-        </div>
-        <div class="client">
-          <div class="sub-container">
-            <img src="assets/client-media/Profile.png" alt="john" />
-            <div class="client-info">
-              <p class="name">John Smith</p>
-              <p class="status">CEO of Chic Boutique</p>
-            </div>
-            <button>Open Website</button>
-          </div>
-        </div>
-      </article>
-      <article class="card section">
-        <div class="text-container">
-          <h3>Working with SquareUp was a breeze.</h3>
-          <p>
-            They understood our vision for a mobile app that streamlined our
-            food delivery service. The app they delivered exceeded our
-            expectations, and our customers love the seamless ordering
-            experience. SquareUp is a trusted partner we highly recommend.
-          </p>
-        </div>
-        <div class="client">
-          <div class="sub-container">
-            <img src="assets/client-media/Profile (1).png" alt="sarah" />
-            <div class="client-info">
-              <p class="name">Sarah Johnson</p>
-              <p class="status">Founder of HungryBites</p>
-            </div>
-            <button>Open Website</button>
-          </div>
-        </div>
-      </article>
-      <article class="card section">
-        <div class="text-container">
-          <h3>
-            SquareUp developed a comprehensive booking and reservation system
-            for our event management company
-          </h3>
-          <p>
-            Their attention to detail and commitment to delivering a
-            user-friendly platform was evident throughout the project. The
-            system has streamlined our operations and enhanced our clients'
-            event experiences.
-          </p>
-        </div>
-        <div class="client">
-          <div class="sub-container">
-            <img src="assets/client-media/Profile (2).png" alt="mark" />
-            <div class="client-info">
-              <p class="name">Mark Thompson</p>
-              <p class="status">CEO of EventMasters</p>
-            </div>
-            <button>Open Website</button>
-          </div>
-        </div>
-      </article>
-      <article class="card section">
-        <div class="text-container">
-          <h3>ProTech Solutions turned to SquareUp to automate our workflow</h3>
-          <p>
-            They delivered an exceptional custom software solution. The system
-            has significantly increased our productivity and reduced manual
-            errors. SquareUp's expertise and professionalism have made them a
-            trusted technology partner.
-          </p>
-        </div>
-        <div class="client">
-          <div class="sub-container">
-            <img src="assets/client-media/Profile (3).png" alt="laura" />
-            <div class="client-info">
-              <p class="name">Laura Adams</p>
-              <p class="status">COO of ProTech Solutions.</p>
-            </div>
-            <button>Open Website</button>
-          </div>
-        </div>
-      </article>
-    </div>
 
-    <!--Register Page-->
-    <div class="title-area">
-      <div><img src="assets/Logo.png" alt="logo" id="logo" /></div>
-      <div class="title">Thank you for your Interest in SquareUp</div>
-      <div class="description">
-        We would love to hear from you and discuss how we can help bring your
-        digital ideas to life. Here are the different ways you can get in touch
-        with us.
+      <!--==== CLIENTS SECTION CONTENT ====-->
+      <div class="clients-content">
+        <!-- Client Card -->
+        <article class="client-card inner-section">
+          <div class="client-card-text-area">
+            <div class="client-card-title">
+              SquareUp has been Instrumental in Transforming our Online Presence
+            </div>
+            <p class="client-card-description">
+              Their team's expertise in web development and design resulted in a
+              visually stunning and user-friendly e-commerce platform. Our
+              online sales have skyrocketed, and we couldn't be happier.
+            </p>
+          </div>
+          <div class="client-info">
+            <img src="assets/client-photos/Profile1.png" alt="john" />
+            <div class="client-info-texts">
+              <p class="client-name">John Smith</p>
+              <p class="client-status">CEO of Chic Boutique</p>
+            </div>
+            <button class="client-button">Open Website</button>
+          </div>
+        </article>
+
+        <!-- Client Card -->
+        <article class="client-card inner-section">
+          <div class="client-card-text-area">
+            <div class="client-card-title">
+              Working with SquareUp was a breeze.
+            </div>
+            <p class="client-card-description">
+              They understood our vision for a mobile app that streamlined our
+              food delivery service. The app they delivered exceeded our
+              expectations, and our customers love the seamless ordering
+              experience. SquareUp is a trusted partner we highly recommend.
+            </p>
+          </div>
+          <div class="client-info">
+            <img src="assets/client-photos/Profile2.png" alt="sarah" />
+            <div class="client-info-texts">
+              <p class="client-name">Sarah Johnson</p>
+              <p class="client-status">Founder of HungryBites</p>
+            </div>
+            <button class="client-button">Open Website</button>
+          </div>
+        </article>
+
+        <!-- Client Card -->
+        <article class="client-card inner-section">
+          <div class="client-card-text-area">
+            <div class="client-card-title">
+              SquareUp developed a comprehensive booking and reservation system
+              for our event management company
+            </div>
+            <p class="client-card-description">
+              Their attention to detail and commitment to delivering a
+              user-friendly platform was evident throughout the project. The
+              system has streamlined our operations and enhanced our clients'
+              event experiences.
+            </p>
+          </div>
+          <div class="client-info">
+            <img src="assets/client-photos/Profile3.png" alt="mark" />
+            <div class="client-info-texts">
+              <p class="client-name">Mark Thompson</p>
+              <p class="client-status">CEO of EventMasters</p>
+            </div>
+            <button class="client-button">Open Website</button>
+          </div>
+        </article>
+
+        <!-- Client Card -->
+        <article class="client-card inner-section">
+          <div class="client-card-text-area">
+            <div class="client-card-title">
+              ProTech Solutions turned to SquareUp to automate our workflow
+            </div>
+            <p class="client-card-description">
+              They delivered an exceptional custom software solution. The system
+              has significantly increased our productivity and reduced manual
+              errors. SquareUp's expertise and professionalism have made them a
+              trusted technology partner.
+            </p>
+          </div>
+          <div class="client-info">
+            <img src="assets/client-photos/Profile4.png" alt="laura" />
+            <div class="client-info-texts">
+              <p class="client-name">Laura Adams</p>
+              <p class="client-status">COO of ProTech Solutions.</p>
+            </div>
+            <button class="client-button">Open Website</button>
+          </div>
+        </article>
       </div>
-      <button class="project">Start Project</button>
-    </div>
+    </section>
 
-    <section class="section">
-      <form>
-        <div class="info">
-          <div class="info-box">
+    <!--========================= FORM SECTION =========================-->
+    <section id="register" class="form-section">
+      <!--==== TITLE AREA ====-->
+      <div class="title-area">
+        <img src="assets/Logo.png" alt="logo" class="title-area-logo" />
+        <div class="title">Thank you for your Interest in SquareUp</div>
+        <div class="title-area-description">
+          We would love to hear from you and discuss how we can help bring your
+          digital ideas to life. Here are the different ways you can get in
+          touch with us.
+        </div>
+        <button class="start-project-button">Start Project</button>
+      </div>
+
+      <!--==== FORM SECTION CONTENT ====-->
+      <form class="inner-section form-section-content">
+        <!-- Form Row -->
+        <div class="row-2">
+          <!-- Form Group -->
+          <div class="form-group">
             <label for="fullName">Full Name</label>
             <input
               type="text"
@@ -187,7 +202,8 @@
             />
           </div>
 
-          <div class="info-box">
+          <!-- Form Group -->
+          <div class="form-group">
             <label for="email">Email</label>
             <input
               type="text"
@@ -198,39 +214,37 @@
           </div>
         </div>
 
-        <div class="selection">
-          <label for="options">Why are you contacting us?</label>
+        <!-- Form Group -->
+        <div class="form-group">
+          <label>Why are you contacting us?</label>
           <div class="options">
-            <div class="select">
-              <span class="check" onclick="selectOption(this)"></span>
+            <div class="option">
+              <input type="checkbox" class="checkbox" />
               Web Design
             </div>
-            <div class="select">
-              <span class="check" onclick="selectOption(this)"></span>
+            <div class="option">
+              <input type="checkbox" class="checkbox" />
               Mobile App Design
             </div>
-            <div class="select">
-              <span class="check" onclick="selectOption(this)"></span>
+            <div class="option">
+              <input type="checkbox" class="checkbox" />
               Collaboration
             </div>
-            <div class="select">
-              <span class="check" onclick="selectOption(this)"></span>
+            <div class="option">
+              <input type="checkbox" class="checkbox" />
               Other
             </div>
           </div>
         </div>
 
-        <div class="budget">
+        <!-- Form Group -->
+        <div class="form-group">
           <label for="budget">What is your budget?</label>
-          <p id="subtitle">Slide to indicate your budget range:</p>
-          <input
-            type="range"
-            id="range-input"
-            name="budget"
-            min="1000"
-            max="3000"
-            step="500"
-          />
+          <p class="form-group-description">
+            Slide to indicate your budget range:
+          </p>
+
+          <input type="range" min="1000" max="3000" step="4" />
 
           <div class="budget-values">
             <span>$1000</span>
@@ -241,92 +255,68 @@
           </div>
         </div>
 
-        <div class="info-box message">
+        <!-- Form Group -->
+        <div class="form-group">
           <label for="message">Your Message</label>
-          <textarea
-            id="text-box"
-            name="message"
+          <input
+            id="message"
+            class="input-field"
+            type="text"
             placeholder="Type here"
-            rows="2"
-          ></textarea>
+          />
         </div>
 
-        <button type="submit" id="buton">Submit</button>
+        <button type="submit" class="form-button">Submit</button>
       </form>
     </section>
 
-    <div class="footer-box">
-      <section class="section">
-        <div class="footer">
-          <div class="logo-box">
-            <img src="assets/Logo.png" alt="logo" id="footer-logo" />
-            <span>SquareUp</span>
-          </div>
+    <!--========================= LINE =========================-->
+    <div class="line"></div>
 
-          <div class="links">
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Work</a>
-            <a href="#">Process</a>
-            <a href="#">About</a>
-            <a href="#">Careers</a>
-            <a href="#">Contact</a>
-          </div>
-
-          <div class="socials">
-            <span>Stay Connected</span>
-            <img
-              src="assets/register-media/facebook.png"
-              alt="facebook"
-              class="icon"
-            />
-            <img
-              src="assets/register-media/twitter.png"
-              alt="twitter"
-              class="icon"
-            />
-            <img
-              src="assets/register-media/linkedin.png"
-              alt="linkedin"
-              class="icon"
-            />
-          </div>
+    <!--========================= FOOTER =========================-->
+    <footer>
+      <!-- First Row -->
+      <div class="footer-first-row">
+        <div class="logo-box">
+          <img src="assets/Logo.png" alt="logo" class="footer-logo" />
+          <span>SquareUp</span>
         </div>
 
-        <div class="contact-part">
+        <div class="footer-socials">
+          <span>Stay Connected</span>
+          <div class="icon"><i class="ri-facebook-circle-fill"></i></div>
+          <div class="icon"><i class="ri-twitter-x-line"></i></div>
+          <div class="icon"><i class="ri-linkedin-box-fill"></i></div>
+        </div>
+      </div>
+
+      <!-- Line -->
+      <div class="line"></div>
+
+      <!-- First Row -->
+      <div class="footer-second-row">
+        <div class="contacts">
           <div class="contact">
-            <div class="contact-box">
-              <img
-                src="assets/register-media/email.png"
-                alt="email"
-                class="contact-icon"
-              />
-              <span>hello@squareup.com</span>
-            </div>
-
-            <div class="contact-box">
-              <img
-                src="assets/register-media/phone.png"
-                alt="phone"
-                class="contact-icon"
-              />
-              <span>+91 91813 23 2309</span>
-            </div>
-
-            <div class="contact-box">
-              <img
-                src="assets/register-media/location.png"
-                alt="location"
-                class="contact-icon"
-              />
-              <span>Somewhere in the World</span>
-            </div>
+            <i class="ri-mail-fill"></i>
+            <p>hello@squareup.com</p>
           </div>
-          <span id="text">© 2023 SquareUp. All rights reserved.</span>
+
+          <div class="contact">
+            <i class="ri-phone-fill"></i>
+            <p>+91 91813 23 2309</p>
+          </div>
+
+          <div class="contact">
+            <i class="ri-map-pin-2-fill"></i>
+            <p>Somewhere in the World</p>
+          </div>
         </div>
-      </section>
-    </div>
-    <script src="home-page/home.js"></script>
-    <script src="register-page/main.js"></script>
+
+        <div class="copyrights">© 2023 SquareUp. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <!--========================= MAIN JS =========================-->
+    <script src="script.js"></script>
   </body>
 </html>

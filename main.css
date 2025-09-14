@@ -1,0 +1,763 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*========================= PROJECT BASE =========================*/
+:root {
+  --logo-green: #9eff00;
+  --subheading: #d8ff99;
+  --text-color: #e6e6e6;
+  --text-color-dark: #a1a1a1;
+  --dark-gray: #242424;
+  --light-gray: #333333;
+  --border-width: 1.5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1a1a1a;
+  font-family: "Barlow", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* a etiketlerinin text decoration'ı kaldırdık */
+/* Ayrıca bu etikete özel olarak text-color vermemiz gerekiyor */
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Bu elementleri sitede kullanacağız */
+/* Bunlara özel olarak font-family eklemek gerekiyor */
+input, textarea, button {
+  font-family: "Barlow", sans-serif;
+  background-color: inherit;
+  color: var(--text-color);
+} 
+
+/*========================= TEKRAR KULLANILABİLİR CSS CLASS'LARI =========================*/
+/* Border'a sahip section */
+section {
+  margin: 0 2.5rem 4rem;
+  border: var(--border-width) solid var(--dark-gray);
+  /* 
+    Aşağıdaki iki özellik sidebar'ı relative ile <section> kontrolü içerisine almak, 
+    overflow: hidden ile sidebar sayfada değilken sidebar'ın gözükmesini önlemek
+  */
+  /* overflow: hidden'ı kaldırdığınızda sorunu göreceksiniz */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Arkaplanında resim olan başlık alanı */
+.title-area {
+  position: relative;
+  padding: 5rem 20%;
+  display: grid;
+  justify-content: center;
+  row-gap: 0.6rem;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  background-image: url("assets/Container.png");
+  background-position: center;
+}
+
+/* title-area içerisindeki başlık */
+.title {
+  font-size: 1.9rem;
+  line-height: 1.3;
+  font-weight: 500;
+  color: white;
+}
+
+/* 'section' içerisindeki içerikler için inner-section */
+.inner-section {
+  padding: 4rem 3.5rem;
+}
+
+/* Tüm satırı kaplayan ince bir çizgi */
+.line {
+  width: 100%;
+  height: var(--border-width);
+  background-color: var(--dark-gray);
+}
+
+/*============ BU ALAN İÇİN RESPONSIVE ============*/
+@media (max-width: 760px) {
+  /* Ana section'ın kenarlara uzaklığını biraz azalttık */
+  section {
+    margin: 0 1.5rem 3rem;
+  }
+
+  /* İçeriklerin kenarlara uzaklığını biraz azalttık */
+  .inner-section {
+    padding: 2.5rem 2rem;
+  }
+
+  /* Başlık alanının kenarlara uzaklığını biraz azalttık */
+  .title-area {
+    padding: 3rem 2rem;
+  }
+}
+
+/*========================= NAVBAR =========================*/
+/* sidebar'ı ekrana getirmek için js ile nav-menu'ye bu class'ı vereceğiz */
+/* navbar responsive'inde nav-menu'de right değerinin -100% olduğunu göreceksin */
+.show-menu {
+  right: 0 !important;
+}
+
+/* Ana nav için özellikler */
+/* Genel kenar boşlukları, nav yüksekliği, display: flex özellikleri buraya veriliyor. */
+/* İçerisindeki elemanlar flex ile yan yana */
+nav {
+  height: 12vh;
+  padding-inline: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+/* Nav solundaki logo alanı. İçerisindeki elemanlar flex ile yan yana*/
+.nav-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Logo */
+.nav-logo-area img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Nav ortasındaki linklerin kapsayıcı divi */
+/* İçerisindeki elemanlar flex ile yan yana */
+.nav-menu {
+  position: relative;
+  display: flex;
+  gap: 2.5rem 1.5rem;
+}
+
+/* Linklerin her biri */
+.nav-menu a {
+  transition: color 0.4s, transform 0.4s;
+}
+
+/* Linklerin üzerine gelindiğinde */
+.nav-menu a:hover {
+  transform: scale(1.02);
+  color: white;
+}
+
+/* nav menu içerisinde küçük ekranlarda gözükecek kapatma butonu */
+.nav-close {
+  display: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 600;
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  right: 60px;
+  transition: color 0.4s;
+}
+
+/* Kapatma butonunun üzerine gelindiğinde */
+.nav-close:hover {
+  color: var(--logo-green);
+}
+
+/* Navbar ve landing-page'de kullanılacak apply butonu */
+.btn-apply {
+  background-color: var(--logo-green);
+  color: var(--dark-gray);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+/* Apply butonunun üzerine gelindiğinde */
+.btn-apply:hover {
+  opacity: 0.8;
+}
+
+/* Küçük ekranlarda ortaya çıkacak hamburger menu */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: limegreen;
+}
+
+/*============ BU ALAN İÇİN RESPONSIVE ============*/
+@media screen and (max-width: 768px) {
+  /* Küçük ekranlar için sidebar */
+  /* nav-menu'yü sidebar haline getiriyoruz */
+  .nav-menu {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: -100%; 
+    flex-direction: column; /* Linkler artık alt alta */
+    background-color: var(--dark-gray);
+    width: 70%;
+    height: 100vh;
+    padding: 7rem 4rem;
+    font-size: 1.25rem;
+    border-left: var(--border-width) solid var(--light-gray);
+    transition: right 0.4s;
+  }
+
+  /* nav menu'deki kapatma butonunu artık göster */
+  .nav-close {
+    display: block;
+  }
+
+  /* Hamburger menüyü artık göster */
+  .hamburger {
+    display: block;
+  }
+
+  /* Apply butonunu gizle */
+  .btn-apply-nav{
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  /* nav menu'nün genişliğini arttır */
+  .nav-menu {
+    width: 100%;
+  }
+}
+
+/*========================= LANDING PAGE =========================*/
+/* Navbar hariç landing page container'ı */
+/* display: flex, içeriği ortalamak için kullanıldı */
+.landing-page-container {
+  position: relative;
+  padding-inline: 2rem;
+  display: flex;             
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 88vh;
+  font-size: 1.2rem;
+}
+
+/* landing page contaner içerisindeki content */
+/* İçeriği biraz yukarı kaydırmak için margin bottom verdik */
+/* İçeriğin satırları arasına row-gap vermek için flex kullandık */
+.landing-page-content {
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+/* landing page başlık stili  */
+.landing-page-title {
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: white;
+}
+
+/* Landing page'in ortasındaki satır */
+.categories {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  background-color: var(--dark-gray);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  color: var(--text-color-dark);
+}
+
+/* ilgili satır içerisindeki a'ların stilini özelliştirdik */
+.categories a {
+  background-color: var(--light-gray);
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* a'ların üzerine gelindiğinde */
+.categories a:hover {
+  background-color: var(--logo-green);
+  color: var(--dark-gray);
+}
+
+/* Buton alanı. İçerisindeki elemanlar flex ile yan yana */
+.landing-page-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Siyah buton */
+.btn-dark {
+  background-color: var(--dark-gray);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+/* Siyah butonun üzerine gelindiğinde */
+.btn-dark:hover {
+  background-color: var(--light-gray);
+}
+
+/* Landing page arkaplan görselini tutacak olan div */
+.landing-page-bg {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background: url("../assets/AbstractDesign.png") no-repeat center bottom;
+  background-size: contain;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/*============ BU ALAN İÇİN RESPONSIVE ============*/
+@media screen and (max-width: 1250px){
+  /* Landing page title'ı küçült */
+  .landing-page-title {
+    font-size: 3.5rem;
+  }
+
+  /* Arkaplan resmini büyüt */
+  .landing-page-bg {
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 870px){
+  /* Kategori alanındaki yazıları artık ortala */
+  .categories {
+    justify-content: center;
+  }
+
+  /* Kategori alanındaki linkleri normale çevir, arkaplan ile aynı olsun */
+  .categories a {
+    background-color: inherit;
+    padding: 0;
+    color: var(--text-color-dark);
+  }
+}
+
+@media (max-width: 580px) {
+  /* Landing page title'ını biraz küçültüyoruz */
+  .landing-page-title {
+    font-size: 1.9rem;
+  }
+}
+
+/*========================= CLIENTS SECTION =========================*/
+/* Client kartlarının kapsayıcı divi */
+/* Burayı grid ile 2 sütuna ayırıyoruz */
+.clients-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+}
+
+/* Her bir client kartı. Elemanların arasına row-gap vermek için flex kullanıldı */
+.client-card {
+  border: var(--border-width) solid var(--dark-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1.25rem;
+}
+
+/* Başlık ve açıklama kısmının kapsayıcı divi */
+.client-card-text-area {
+  display: grid;
+  row-gap: 0.8rem;
+}
+
+/* Başlık (yeşil olan)*/
+.client-card-title {
+  color: var(--subheading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Client kartının altındaki kutucuğun divi. İçerisindeki elemanlar flex ile yan yana */
+.client-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: var(--border-width) solid var(--dark-gray);
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+}
+
+/* Client resmi */
+.client-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25%;
+}
+
+.client-info-texts {
+  flex: 1;
+}
+
+/* Client bilgileri */
+.client-name {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.client-status {
+  color: var(--text-color-dark);
+  font-size: 0.9rem;
+}
+
+/* Kutucuğun sağındaki buton */
+.client-button {
+  cursor: pointer;
+  border: none;
+  background-color: var(--dark-gray);
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 0.9rem;
+  border-radius: 4px;
+  transition: background 0.4s;
+}
+
+/* Butonun üzerine gelindiğinde */
+.client-button:hover {
+  background-color: var(--light-gray);
+}
+
+/*============ BU ALAN İÇİN RESPONSIVE ============*/
+@media (max-width:970px) {
+  /* Genel sütun sayısını 1'e düşür */
+  .clients-content{
+    grid-template-columns: 1fr;
+  }
+
+  /* Client kartının altındaki kutucuğun içindeki butonu artık gösterme */
+  .client-button {
+    display: none;
+  }
+}
+
+/*========================= FORM SECTION =========================*/
+/* title-area içerisindeki ekstra yeşil buton */
+/* Ekran küçüldüğünde gösterilecek o yüzden şu an display: none */
+.start-project-button {
+  display: none;
+  background-color: var(--logo-green);
+  border: none;
+  color: var(--dark-gray);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 7px;
+  transition: opacity 0.3s;
+}
+
+/* title-area içerisindeki logo */
+.title-area-logo {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+}
+
+/* Formun kapsayıcı divi. Her bir satırın arasına boşluğu burdan verdik */
+.form-section-content {
+  display: grid;
+  row-gap: 2rem;
+}
+
+/* Form içerisindeki arkaplanı açık gri olan her bir eleman */
+/* İçerisindeki elemanların arasına row-gap vermek için flex kullanıldı */
+.form-group {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1rem;
+  background-color: var(--dark-gray);
+  border-radius: 6px;
+  border: var(--border-width) solid var(--light-gray);
+}
+
+/* Form group içerisinde ekstra açıklama yazısı (gerektiğinde )*/
+.form-group-description {
+  font-size: 14px;
+}
+
+/* 2 düşüyor yapılmak istenen form-group'a verilen class */
+.row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* form-group'un en üstünde yer alan başlık yazıları */
+label {
+  color: white;
+  font-size: 18px;
+}
+
+/* Input elemanları stili */
+.input-field {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  padding-bottom: 5px;
+  border-bottom: var(--light-gray) 1px solid;
+  color: white;
+}
+
+/* Input elemanlarına basıldığında */
+.input-field:focus {
+  border-bottom: var(--logo-green) 1px solid;
+}
+
+/* 2. satırdaki çoktan seçmeli alanın kapsayıcı divi */
+/* Bu alanı grid ile 2 sütunlu hale çeviriyoruz */
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Her bir option için kapsayıcı div */
+/* checkbox ve yazıyı y ekseninde birbirine ortalamak için flex kullanıldı */
+.option {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Option'ı seçebileceğimiz kare checkbox stili */
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 23px;
+  width: 23px;
+  border: var(--border-width) solid var(--light-gray);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Checkbox seçili olduğunda */
+.checkbox:checked {
+  background-color: var(--logo-green);
+}
+
+/* Budget values'un altında yazılı değerlerin divi. İçerisindeki elemanlar flex ile yan yana */
+.budget-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Formun en altındaki buton */
+.form-button {
+  background-color: var(--logo-green);
+  color: var(--dark-gray);
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: opacity 0.4s;
+}
+
+/* form-butonunun üzerine gelindiğinde */
+.form-button:hover {
+  opacity: 0.8;
+}
+
+/*============ BU ALAN İÇİN RESPONSIVE ============*/
+@media (max-width: 1155px) {
+  /* title-area içerisindeki butonu artık göster */
+  .start-project-button {
+    display: block;
+  }
+}
+
+@media (max-width: 650px) {
+  /* 2 sütunlu form satırlarını tek sütuna düşür */
+  .row-2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Çoktan seçmeli alanı tek sütuna düşür */
+  .options {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Budget values altındaki yazıları küçült */
+  .budget-values {
+    font-size: 10px;
+  }
+}
+
+/*========================= FOOTER =========================*/
+/* Genel footer divi. En dış boşlukları buradan verdik */
+/* Footer'ın 2 satırı var. Aralarındaki boşluğu buradan veriyoruz */
+footer {
+  margin: 1.5rem 2.5rem;
+  display: grid;
+  row-gap: 2rem;
+}
+
+/* İlk satır. Nav benzeri yapı. Flex ile içerikleri yan yana sıraladık */
+.footer-first-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 1.5rem;
+  border-bottom: var(--border) 1px solid;
+}
+
+/* İlk satırın solundaki logo alanı. İçerisindeki elemanlar flex ile yan yana */
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Logo */
+.footer-logo {
+  width: 50px;
+  height: 50px;
+}
+
+/* İlk satırın sağındaki social alanı. İçerisindeki elemanlar flex ile yan yana */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  border: var(--border-width) solid var(--dark-gray);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Social alanı içerisindeki icon kutuları */
+/* flex, kutu içerisindeki iconu ortalamak için kullanıldı */
+.footer-socials .icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: var(--border-width) solid var(--dark-gray);
+  border-radius: 5px;
+  transition: background 0.4s;
+}
+
+/* Social alan içerisindeki iconların stili */
+.footer-socials i {
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: var(--logo-green);
+  transition: color 0.4s;
+}
+
+/* Icon kutularının üzerine gelindiğinde kutu ve icon davranışı */
+.footer-socials .icon:hover {
+  background-color: var(--logo-green);
+}
+.footer-socials .icon:hover i {
+  color: var(--dark-gray);
+}
+
+/* Footer ikinci satır */
+.footer-second-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 1.5rem;
+  color: var(--text);
+}
+
+/* İkinci satırın solundaki her bir contact alanı. */
+.contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 2rem;
+}
+
+/* Her bir contact'ın divi. İçerisindeki elemanlar flex ile yan yana */
+.contact {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  border-bottom: var(--dark-gray) solid 1px;
+  padding-bottom: 10px;
+}
+
+/* contact ikonları */
+.contact i {
+  font-size: 1.2rem;
+  color: var(--logo-green);
+}
+
+/* İkinci satırın sağındaki copyright yazısı */
+.copyrights {
+  color: var(--text-color-dark);
+  font-size: 12px;
+}
+
+@media (max-width: 1060px) {
+
+  /* İkinci satırın elemanlarını alt alta diz */
+  .footer-second-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 748px) {
+  /* İlk satırın elemanlarını alt alta diz */
+  .footer-first-row {
+    flex-direction: column;
+  }
+
+  /* Contact'ları alt alta diz */
+  .contacts {
+    flex-direction: column;
+  }
+}
